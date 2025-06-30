@@ -1,0 +1,36 @@
+---
+title: Groq TTS Provider
+---
+
+import { Callout } from "@/components/callout";
+
+# Groq TTS Provider
+
+The Groq TTS provider enables text-to-speech synthesis using Groq's fast and high-quality API.
+
+## Configuration
+
+```json
+{
+  "provider": "groq",
+  "apiKey": "your-groq-api-key",
+  "voice": "alloy",
+  "model": "tts-1",
+  "speed": 1,
+  "language": "en"
+}
+```
+
+- **apiKey**: Your Groq API key (required)
+- **voice**: Voice name (default: `alloy`)
+- **model**: Model name (default: `tts-1`)
+- **speed**: Speaking speed (0.25–4, default: 1)
+- **language**: Language code (optional)
+
+## Usage
+
+Select `groq` as your TTS provider in your configuration. The provider will handle text-to-speech requests using the Groq API.
+
+<Callout type="info">
+You must have a valid Groq API key. Set it via the `GROQ_API_KEY` environment variable or directly in your config.
+</Callout>

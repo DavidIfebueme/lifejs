@@ -1,9 +1,11 @@
 import { z } from "zod";
 import { CartesiaTTS, cartesiaTTSConfigSchema } from "./providers/cartesia";
+import { GroqTTS, groqTTSConfigSchema } from "./providers/groq";
 
 // Providers
 export const ttsProviders = {
   cartesia: { class: CartesiaTTS, configSchema: cartesiaTTSConfigSchema },
+  groq: { class: GroqTTS, configSchema: groqTTSConfigSchema },
 } as const;
 
 export type TTSProvider = (typeof ttsProviders)[keyof typeof ttsProviders]["class"];
